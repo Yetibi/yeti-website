@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Portada LinkedIn — Julián Aguilar · Yeti BI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Source+Serif+4:ital,wght@0,700;1,700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1584px;
+    height: 396px;
+    background: #2E2640;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+  }
+
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    z-index: 0;
+  }
+
+  .glow-left {
+    position: absolute;
+    left: -80px;
+    top: -80px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(224,123,48,0.18) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  .glow-right {
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(100,80,160,0.25) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  .accent-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7px;
+    height: 100%;
+    background: linear-gradient(to bottom, #E07B30, #C45F15);
+    z-index: 2;
+  }
+
+  .accent-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #E07B30 0%, #C45F15 40%, #2E2640 100%);
+    z-index: 2;
+  }
+
+  .content {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    max-width: 1100px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #E07B30;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: #E07B30;
+    border-radius: 2px;
+  }
+
+  .headline {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 56px;
+    font-weight: 700;
+    font-style: italic;
+    color: #FFFFFF;
+    line-height: 1.05;
+    margin-bottom: 22px;
+    letter-spacing: -1.5px;
+  }
+
+  .headline span {
+    color: #E07B30;
+  }
+
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    margin-bottom: 18px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+
+  .subtitle strong {
+    color: rgba(255,255,255,0.85);
+    font-weight: 700;
+  }
+
+  .flow {
+    position: absolute;
+    bottom: 28px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    z-index: 4;
+  }
+
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 100px;
+    color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    white-space: nowrap;
+  }
+
+  .pill.active {
+    color: #1E1A2E;
+    background: #E07B30;
+    border-color: #E07B30;
+  }
+
+  .arrow {
+    width: 32px;
+    height: 1px;
+    background: rgba(255,255,255,0.18);
+    position: relative;
+    margin: 0 2px;
+  }
+
+  .arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -3px;
+    border-left: 7px solid rgba(255,255,255,0.18);
+    border-top: 3.5px solid transparent;
+    border-bottom: 3.5px solid transparent;
+  }
+
+  /* Decorative large YETI BI text - top right */
+  .watermark {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 120px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    text-align: right;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="glow-left"></div>
+  <div class="glow-right"></div>
+  <div class="accent-bar"></div>
+  <div class="accent-bottom"></div>
+
+  <div class="watermark">YETI<br>BI</div>
+
+  <div class="content">
+    <div class="eyebrow">Process & operation · Project Management  · Finantial data Analysis ••••  Yeti BI</div>
+    <h1 class="headline">
+      Procesos  <span>.optimize()</span><br>
+      → Datos.clean() → IA.scale()</span><br>
+    <p class="subtitle">
+      <br>
+      <strong></strong>
+      &nbsp;&nbsp; BI · IA · Lean Six Sigma · PMBOK
+    </p>
+  </div>
+
+  <div class="flow">
+    <span class="pill active">Diagnostica</span>
+    <div class="arrow"></div>
+    <span class="pill">Optimiza</span>
+    <div class="arrow"></div>
+    <span class="pill">Escala con IA</span>
+    
+  </div>
+
+</body>
+</html>
