@@ -1,0 +1,48 @@
+@import "@fontsource-variable/geist";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #2E2640;
+  color: white;
+  font-family: "Geist Variable", system-ui, -apple-system, sans-serif;
+}
+
+/* Accessibility: respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Gradient backgrounds para glows */
+.bg-glow-orange {
+  background: radial-gradient(
+    circle,
+    rgba(224, 123, 48, 0.18) 0%,
+    transparent 70%
+  );
+}
+
+.bg-glow-purple {
+  background: radial-gradient(
+    circle,
+    rgba(100, 80, 160, 0.25) 0%,
+    transparent 70%
+  );
+}
+
+/* Grid pattern background */
+.bg-grid-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
