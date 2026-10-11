@@ -650,15 +650,21 @@ export default function Page() {
 
         .stats .wrap {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 0;
         }
 
         .stat {
           padding: clamp(34px, 5vw, 56px) clamp(18px, 2.4vw, 34px);
           border-left: 1px solid var(--line);
+          border-top: none;
         }
 
         .stat:first-child {
+          border-left: 0;
+        }
+
+        .stat:nth-child(4n+1) {
           border-left: 0;
         }
 
@@ -688,10 +694,10 @@ export default function Page() {
           line-height: 1.5;
         }
 
-        /* PROBLEMA */
+        /* PROBLEMA - Advanced Responsive */
         .problem-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
           gap: clamp(40px, 7vw, 96px);
           align-items: start;
         }
@@ -755,11 +761,12 @@ export default function Page() {
           font-weight: 600;
         }
 
-        /* SERVICIOS */
+        /* SERVICIOS - Advanced Layout */
         .svc-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: clamp(16px, 3vw, 24px);
+          grid-auto-rows: 1fr;
         }
 
         .card {
@@ -1031,8 +1038,9 @@ export default function Page() {
 
         .cases {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
+          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+          gap: clamp(16px, 3vw, 24px);
+          grid-auto-rows: 1fr;
         }
 
         .case {
@@ -1080,10 +1088,10 @@ export default function Page() {
           line-height: 1.55;
         }
 
-        /* TECNOLOGÍAS */
+        /* TECNOLOGÍAS - Advanced Responsive Grid */
         .tech-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 1px;
           background: var(--line);
           border: 1px solid var(--line);
@@ -1210,11 +1218,10 @@ export default function Page() {
         }
 
         .footer .wrap {
-          display: flex;
-          justify-content: space-between;
-          gap: 40px;
-          flex-wrap: wrap;
-          align-items: flex-start;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: clamp(32px, 4vw, 56px);
+          align-items: start;
         }
 
         .footer .brand {
@@ -1893,6 +1900,10 @@ export default function Page() {
               <a href="#metodologia">Metodología</a>
               <a href="#resultados">Resultados</a>
               <a href="#tecnologias">Tecnologías</a>
+            </div>
+            <div className="fcol">
+              <h5>Productos</h5>
+              <a href="https://platify.yetibi.com" target="_blank" rel="noopener">Platify · Finanzas personales</a>
             </div>
             <div className="fcol">
               <h5>Contacto</h5>

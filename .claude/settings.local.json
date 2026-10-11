@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(gunzip -c \"/Users/julianag/.claude/projects/-Users-julianag-Documents-GitHub-yeti-website/7d8e3b84-6956-4ea6-94ab-e3e19958e1d0/tool-results/webfetch-1780535155955-o0kb2p.bin\")",
+      "Read(//private/tmp/**)",
+      "Bash(tar -xzf \"/Users/julianag/.claude/projects/-Users-julianag-Documents-GitHub-yeti-website/7d8e3b84-6956-4ea6-94ab-e3e19958e1d0/tool-results/webfetch-1780535155955-o0kb2p.bin\")",
+      "Read(//tmp/yetibi-s-website/project/**)",
+      "Read(//private/tmp/yetibi-s-website/project/**)",
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(npm install *)",
+      "Bash(pkill -f \"npm run dev\")",
+      "Bash(pkill -f \"npm run dev\" || true *)",
+      "Bash(curl -s \"http://localhost:3000\")",
+      "Bash(gunzip -c \"/Users/julianag/.claude/projects/-Users-julianag-Documents-GitHub-yeti-website/7d8e3b84-6956-4ea6-94ab-e3e19958e1d0/tool-results/webfetch-1780536558621-vz0y5s.bin\")",
+      "Bash(tar -tz)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp"
+    ]
+  }
+}

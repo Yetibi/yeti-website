@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeti BI — Eficiencia operativa en resultados financieros</title>
+    <meta name="description" content="Consultoría de Business Intelligence y optimización de procesos en Medellín. Traducimos eficiencia operativa en resultados financieros.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #2E2640;
+            --bg-deep: #221B31;
+            --panel: #372E4D;
+            --panel-2: #3F3557;
+            --accent: #E07B30;
+            --ink: #FFFFFF;
+            --muted: #D4CCDB;
+            --muted-2: #8E83A6;
+            --line: rgba(255,255,255,.1);
+            --line-strong: rgba(255,255,255,.18);
+            --serif: "Playfair Display", Georgia, serif;
+            --sans: "Archivo", system-ui, sans-serif;
+            --mono: "JetBrains Mono", monospace;
+            --maxw: 1240px;
+            --gutter: clamp(20px, 5vw, 64px);
+            --radius: 16px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--sans);
+            font-size: 18px;
+            line-height: 1.65;
+            font-weight: 400;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+        .section { position: relative; padding-block: clamp(80px, 11vw, 150px); }
+        .section--deep { background: var(--bg-deep); }
+
+        h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; margin: 0; }
+        h1 { font-size: clamp(2.7rem, 8.2vw, 7rem); line-height: 1.0; letter-spacing: -0.025em; }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6em;
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.95em 1.5em;
+            border-radius: 999px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .btn--primary {
+            background: var(--accent);
+            color: #1c1426;
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(224, 123, 48, 0.3);
+        }
+
+        .btn--ghost {
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid var(--line-strong);
+        }
+
+        .btn--ghost:hover {
+            border-color: var(--ink);
+            background: rgba(255,255,255,.05);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px var(--gutter) 64px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 90% 70% at 50% 30%, rgba(224, 123, 48, 0.1), transparent 78%);
+            pointer-events: none;
+        }
+
+        .hero .wrap { position: relative; z-index: 2; }
+        
+        .kicker {
+            font-family: var(--mono);
+            font-size: 0.74rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: clamp(16px, 3vw, 24px);
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: clamp(28px, 3vw, 40px);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            background: var(--panel-2);
+            box-shadow: 0 24px 48px rgba(224, 123, 48, 0.15);
+        }
+
+        .card h3 { font-size: 1.55rem; }
+        .card p { margin: 0; color: var(--muted); }
+
+        .stat {
+            text-align: center;
+            padding: clamp(34px, 5vw, 56px) clamp(18px, 2.4vw, 34px);
+        }
+
+        .stat .num {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+            color: var(--ink);
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.1em;
+        }
+
+        .stat .num .u { color: var(--accent); }
+        .stat .lbl {
+            margin-top: 14px;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted-2);
+        }
+
+        .reveal {
+            opacity: 0;
+            animation: slideUp 0.7s ease 0.5s forwards;
+            will-change: opacity, transform;
+        }
+        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+        /* ===== FRAMER-STYLE CHARACTER STAGGER ===== */
+        .word {
+            display: inline-block;
+            margin-right: 0.1em;
+            opacity: 0;
+            transform: translateY(20px) skewX(-20deg);
+            animation: morphIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes morphIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) skewX(0deg);
+            }
+        }
+
+        .word:nth-child(1) { animation-delay: 0.0s; }
+        .word:nth-child(2) { animation-delay: 0.1s; }
+        .word:nth-child(3) { animation-delay: 0.2s; }
+        .word:nth-child(4) { animation-delay: 0.3s; }
+        .word:nth-child(5) { animation-delay: 0.4s; }
+        .word:nth-child(6) { animation-delay: 0.5s; }
+        .word:nth-child(7) { animation-delay: 0.6s; }
+
+        @media (max-width: 768px) {
+            body { font-size: 17px; }
+            .hero { min-height: auto; padding-top: 140px; }
+            .svc-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrap">
+            <div class="kicker reveal">Process & Operation · Project Management · Financial Data Analysis</div>
+            <h1 style="line-height: 1.1;">
+                <span class="word">Procesos</span>
+                <span class="word" style="color: var(--accent)">.optimize()</span><br>
+                <span class="word">→ Datos</span>
+                <span class="word" style="color: var(--accent)">.clean()</span>
+                <span class="word">→ IA</span>
+                <span class="word" style="color: var(--accent)">.scale()</span>
+            </h1>
+            <p class="reveal" style="color: var(--muted); font-size: 1.2rem; max-width: 46ch; margin: 34px 0 0;">
+                Traducimos eficiencia operativa en <strong>resultados financieros</strong>. Ingeniería de producción + tecnología aplicada a la decisión gerencial.
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 42px;">
+                <a href="#" class="btn btn--primary btn--lg reveal">Agenda tu diagnóstico →</a>
+                <a href="#" class="btn btn--ghost reveal">Ver metodología</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section section--deep">
+        <div class="wrap">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0;">
+                <div class="stat reveal">
+                    <div class="num"><span>37</span><span class="u">%</span></div>
+                    <div class="lbl">Reducción de tiempos operativos</div>
+                </div>
+                <div class="stat reveal">
+                    <div class="num"><span class="u">$</span><span>1.2</span><span class="u">B</span></div>
+                    <div class="lbl">COP recuperados en fugas</div>
+                </div>
+                <div class="stat reveal">
+                    <div class="num"><span>40</span><span class="u">+</span></div>
+                    <div class="lbl">Proyectos de mejora entregados</div>
+                </div>
+                <div class="stat reveal">
+                    <div class="num"><span>8</span></div>
+                    <div class="lbl">Años de experiencia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section">
+        <div class="wrap">
+            <div class="kicker reveal">Servicios</div>
+            <h2 class="reveal" style="margin-bottom: 40px;">Cuatro formas de <span style="color: var(--accent); font-style: italic;">cerrar la fuga</span>.</h2>
+            
+            <div class="svc-grid">
+                <div class="card reveal">
+                    <h3>Data Hub Medellín</h3>
+                    <p>Tu área de datos como servicio. Acompañamiento continuo, mes a mes.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>BI Factory</h3>
+                    <p>Dashboards y reportería que funciona. Una sola fuente de verdad.</p>
+                </div>
+                <div class="card reveal" style="background: var(--accent); color: #241829;">
+                    <h3 style="color: #1c1426;">Transformación 60 días ★</h3>
+                    <p style="color: #3a2a1a;">Proyecto con resultado medible. Diagnóstico, ejecución y retorno.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Tech Ops</h3>
+                    <p>Operación y mantenimiento de tu stack. Datos fluyen, nada se cae.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: var(--bg-deep); border-top: 1px solid var(--line); padding: 56px 0 40px;">
+        <div class="wrap">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 20px;">Yeti BI</h4>
+                    <p style="color: var(--muted); font-size: 0.9rem;">Business Intelligence & Optimización de Procesos</p>
+                </div>
+                <div>
+                    <h5 style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 16px;">Servicios</h5>
+                    <a href="#" style="display: block; color: var(--muted); margin-bottom: 10px; transition: color 0.2s;">Data Hub</a>
+                    <a href="#" style="display: block; color: var(--muted); margin-bottom: 10px; transition: color 0.2s;">BI Factory</a>
+                    <a href="#" style="display: block; color: var(--muted); transition: color 0.2s;">Tech Ops</a>
+                </div>
+                <div>
+                    <h5 style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 16px;">Contacto</h5>
+                    <a href="mailto:hola@yetibi.co" style="display: block; color: var(--muted); margin-bottom: 10px; transition: color 0.2s;">hola@yetibi.co</a>
+                    <a href="#" style="display: block; color: var(--muted); transition: color 0.2s;">+57 300 000 0000</a>
+                </div>
+            </div>
+            <div style="border-top: 1px solid var(--line); padding-top: 24px; text-align: center; color: var(--muted-2); font-size: 0.74rem;">
+                <p>© 2026 Yeti BI · Business Intelligence & Optimización de Procesos</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25, rootMargin: '0px 0px -80px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.style.transform = 'translateY(26px)';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "n8n-excel": {
+      "type": "sse",
+      "url": "http://localhost:5678/mcp/279f55ea-1cbe-43df-b27d-3f4731437b91"
+    }
+  }
+}

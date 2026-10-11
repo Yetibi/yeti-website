@@ -1,16 +1,60 @@
-# React + Vite
+# Yeti BI — Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Business Intelligence & Process Optimization Consulting**  
+Medellín, Colombia
 
-Currently, two official plugins are available:
+## 📁 Estructura del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```
+yeti-website/
+├── app/
+│   ├── page.tsx              ← Página principal (10 secciones)
+│   ├── layout.tsx            ← Layout con MotionConfig
+│   └── globals.css           ← Estilos globales
+├── lib/
+│   └── motion.ts             ← Animaciones Motion (tokens + presets)
+├── public/
+│   ├── yeti-landing-clean.html    ← HTML standalone ⭐
+│   ├── design-reference.html      ← Referencia visual
+│   ├── favicon.svg
+│   └── icons.svg
+└── [configs: tailwind, next, ts, postcss]
+```
 
-## React Compiler
+## 🚀 Uso
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Next.js Dev Server:**
+```bash
+npm install && npm run dev
+# http://localhost:3000
+```
 
-## Expanding the ESLint configuration
+**HTML Standalone:**
+```
+public/yeti-landing-clean.html
+http://127.0.0.1:5500/public/yeti-landing-clean.html
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+- ✅ 10 secciones completas
+- ✅ Animaciones Motion (glows, SVG animado, reveal on scroll)
+- ✅ Layouts avanzados (auto-fit, minmax - tailwindcss-advanced-layouts)
+- ✅ Tipografía premium (Playfair, Archivo, JetBrains Mono)
+- ✅ Responsive (320px - 4K)
+- ✅ 12KB HTML limpio
+- ✅ Dark mode
+- ✅ Accesibilidad
+
+## 🎨 Paleta
+
+- **Fondo**: #2E2640
+- **Accent**: #E07B30
+- **Texto**: #FFFFFF
+
+## 🔧 Stack
+
+- Next.js 16.2 + React + TypeScript
+- Motion (motion/react)
+- Tailwind CSS v4
+- tailwindcss-advanced-layouts
